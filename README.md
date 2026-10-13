@@ -1,6 +1,8 @@
 # 8star-prep: Noodvoorraad / Emergency Pantry
 
-[Nederlands](#nederlands) · [English](#english)
+[Nederlands](#nederlands) · [English](#english) · [Changelog](CHANGELOG.md)
+
+![8star-prep dashboard](docs/screenshots/nl-desktop-dashboard.png)
 
 Free, open-source (MIT), self-hosted web app for household emergency supplies: stock, nutrition coverage (kcal, carbs, protein, fat, water), expiry reminders by email and an automatic, deterministic ration plan. No accounts elsewhere, no telemetry, no paid features. Dutch and English.
 
@@ -18,6 +20,26 @@ Free, open-source (MIT), self-hosted web app for household emergency supplies: s
 - **Settings**: household members (adults/children, editable kcal and optional macro targets), duration, water target, timezone, SMTP, users, demo data.
 
 Important notes shown in the app: calories alone do not make a balanced diet or prove that meals can be cooked. Target values are estimates, not medical or dietary advice. Expired best-before (THT) items are listed separately and not called safe or unsafe. Expired use-by (TGT) items are excluded from totals.
+
+### Screenshots
+
+With the bundled demo data loaded (Settings > Demo data).
+
+![Dashboard](docs/screenshots/en-desktop-dashboard.png)
+
+| | |
+| --- | --- |
+| ![Inventory](docs/screenshots/en-desktop-inventory.png)<br>Inventory | ![Ration plan](docs/screenshots/en-desktop-plan.png)<br>Ration plan |
+| ![Expiry](docs/screenshots/en-desktop-expiry.png)<br>Expiry | ![Nutrition catalogue](docs/screenshots/en-desktop-catalogue.png)<br>Nutrition catalogue |
+| ![Settings](docs/screenshots/en-desktop-settings.png)<br>Settings |  |
+
+**On a phone:**
+
+<p>
+  <img src="docs/screenshots/en-mobile-dashboard.png" alt="Dashboard" width="250">
+  <img src="docs/screenshots/en-mobile-inventory.png" alt="Inventory" width="250">
+  <img src="docs/screenshots/en-mobile-plan.png" alt="Ration plan" width="250">
+</p>
 
 ### Deploy from GitHub with Docker Compose (Dockhand)
 
@@ -99,6 +121,8 @@ npm run build
 
 Pure calculation logic lives in `shared/`, server in `server/`, React UI in `web/`. Translations are in `web/src/i18n/en.ts` and `nl.ts`; a test fails if keys or placeholders differ. Rebuild the bundled catalogue with `npm run catalogue:build` (see THIRD_PARTY.md).
 
+To refresh the screenshots in `docs/screenshots`, start the app, load the demo data as admin, then run `npm i --no-save playwright` and `SHOT_PASSWORD=<admin password> node scripts/screenshots.mjs`.
+
 ### Licence
 
 MIT, see [LICENSE](LICENSE). Third-party code and data: [THIRD_PARTY.md](THIRD_PARTY.md).
@@ -117,6 +141,26 @@ MIT, see [LICENSE](LICENSE). Third-party code and data: [THIRD_PARTY.md](THIRD_P
 - **Instellingen**: huishoudleden (volwassenen/kinderen, aanpasbare kcal en optionele macrodoelen), duur, waterdoel, tijdzone, SMTP, gebruikers, demodata.
 
 Let op: calorieën alleen zijn geen evenwichtige voeding en bewijzen niet dat maaltijden te bereiden zijn. Doelwaarden zijn schattingen en geen medisch of dieetadvies. Verlopen THT-producten staan apart en worden niet veilig of onveilig genoemd. Verlopen TGT-producten tellen niet mee.
+
+### Schermafbeeldingen
+
+Met de meegeleverde demodata geladen (Instellingen > Demogegevens).
+
+![Dashboard](docs/screenshots/nl-desktop-dashboard.png)
+
+| | |
+| --- | --- |
+| ![Voorraad](docs/screenshots/nl-desktop-inventory.png)<br>Voorraad | ![Rantsoenplan](docs/screenshots/nl-desktop-plan.png)<br>Rantsoenplan |
+| ![Houdbaarheid](docs/screenshots/nl-desktop-expiry.png)<br>Houdbaarheid | ![Voedingscatalogus](docs/screenshots/nl-desktop-catalogue.png)<br>Voedingscatalogus |
+| ![Instellingen](docs/screenshots/nl-desktop-settings.png)<br>Instellingen |  |
+
+**Op de telefoon:**
+
+<p>
+  <img src="docs/screenshots/nl-mobile-dashboard.png" alt="Dashboard" width="250">
+  <img src="docs/screenshots/nl-mobile-inventory.png" alt="Voorraad" width="250">
+  <img src="docs/screenshots/nl-mobile-plan.png" alt="Rantsoenplan" width="250">
+</p>
 
 ### Uitrollen vanaf GitHub met Docker Compose (Dockhand)
 
