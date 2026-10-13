@@ -1,0 +1,43 @@
+{
+  "name": "8star-prep",
+  "version": "1.0.0",
+  "description": "8star-prep (Noodvoorraad / Emergency Pantry): self-hosted household emergency supplies, nutrition coverage, expiry reminders and ration planning.",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "echo \"Run npm run dev:server and npm run dev:web in two terminals\"",
+    "dev:server": "tsx watch server/index.ts",
+    "dev:web": "vite",
+    "build": "npm run build:web && npm run build:server",
+    "build:web": "vite build",
+    "build:server": "tsc -p tsconfig.server.json",
+    "start": "node dist/server/index.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p web/tsconfig.json --noEmit",
+    "test": "vitest run",
+    "catalogue:build": "node scripts/build-catalogue.mjs"
+  },
+  "dependencies": {
+    "better-sqlite3": "12.11.1",
+    "express": "5.1.0",
+    "nodemailer": "10.0.12"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "7.6.13",
+    "@types/express": "5.0.3",
+    "@types/node": "22.19.1",
+    "@types/nodemailer": "8.0.2",
+    "@types/react": "19.1.12",
+    "@types/react-dom": "19.1.9",
+    "@vitejs/plugin-react": "5.0.2",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "tsx": "4.20.5",
+    "typescript": "5.9.2",
+    "vite": "7.3.6",
+    "vitest": "4.1.11"
+  }
+}
